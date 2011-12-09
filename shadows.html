@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shadows</title>
+		<style>
+			body {
+				width: 216px;
+				margin: 50px auto;
+			}
+			.box {
+				position: relative; /* Without this, bottom in box:after will start at the bottom of the browser window, not the box */
+				-webkit-box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+				-moz-box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+				/* Give frame to the image */
+				padding: 10px;
+				background: white;
+			}
+			.box img {
+				width: 100%; /* Resize the image so that it fits inside the frame */
+				//border: 1px solid #777;
+				border: 1px inset #ccc; /* Make the left and top parts a bit darker */
+			}
+			.box:after { /* To add a 'layer' so that we can add a shadow and manipulate only that */
+				content: '';
+				-webkit-box-shadow: 100px 0 10px 20px rgba(0,0,0,0.2);
+				-moz-box-shadow: 100px 0 10px 20px rgba(0,0,0,0.2);
+				position: absolute;
+				width: 100px; /* Only the right side of the shadow is shown, so it doesn't need to be that wide */
+				height: 10px; /* The height of an opaque box above the shadow */
+				bottom: 20px;
+				right: 90px;
+				z-index: -1; /* Put the shadow behind the image */
+				-webkit-transform: skew(-40deg);
+				-moz-transform: skew(-40deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="shadow.png"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transition</title>
+		<style>
+			#box1 {
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin: 50px 50px;
+				background: red;
+				-moz-transition: width 1s;
+			}			
+			#box1:hover {
+				width: 150px;
+			}
+			#box2 {
+				width: 100px;
+				height: 100px;
+				float:left;
+				margin: 50px 50px;
+				background: red;
+				-moz-transition: background 1s;
+			}
+			#box2:hover {
+				background: green;
+			}
+			#box3 {
+				width: 100px;
+				height: 100px;
+				float:left;
+				margin: 50px 50px;
+				background: red;
+				-moz-transition: height 1s, background 1s;
+			}
+			#box3:hover {
+				height: 150px;
+				background: green;
+			}			
+			#box4 {
+				width: 100px;
+				height: 100px;
+				float:left;
+				margin: 50px 50px;
+				background: red;
+				-moz-transition: -moz-transform 1s, background 1s; /* or use "all 1s" */
+			}			
+			#box4:hover {
+				background: green;
+				-moz-transform: rotate(45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+		</div>
+		<div id="box2">
+		</div>
+		<div id="box3">
+		</div>
+		<div id="box4">
+		</div>		
+	</body>
+</html>

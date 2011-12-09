@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>Shadows</title>
+	<style>
+		body {
+			width: 500px;
+			margin: 50px auto;
+		}
+		.box {
+			width: 240px;
+			height: 140px;
+			-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5); // x offset (how much you want the shadow to go to the right), y offset, blur, color
+			padding: 10px;
+			background: green;
+		}
+		.box img {
+			padding: 10px;
+			max-width: 100%;
+			border: 2px inset #8a4419; // With inset, the left and the top side will be darker than the right and bottom side
+		}
+		.box:after { // To create a kind of layer that we can manipulate independently of the previous box elements
+			content: ''; // To add text if necessary
+			-webkit-box-shadow: 100px 0 10px 20px rgba(0,0,0,0.2);
+			position: absolute;
+			width: 500px; height: 200px;
+			bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="shadow.png" alt="Shadow" />
+	</div>
+</body>
+</html>

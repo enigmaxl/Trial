@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Border Radius</title>
+		<style>
+			body {
+				background #eee;
+			}
+			#wrapper {
+				width: 960px;
+				margin: 0 auto;
+			}
+			#myDiv {
+				margin: 0 auto;
+				top: 60px;
+				position: relative;
+				width: 400px;
+				height: 400px;
+				background-color: #ff9900;
+				/* Border radius  for all four corners */
+				// -webkit-border-radius: 50px;
+				// -moz-border-radius: 50px; 				
+				/* Border radius  for just top left and bottom right */
+				-webkit-border-top-left-radius: 50px;
+				-webkit-border-bottom-right-radius: 50px;
+				-moz-border-radius-topleft: 50px;
+				-moz-border-radius-bottomright: 50px;
+				padding: 15px; // optional
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="myDiv">
+				<p>This is some content</p> <!-- optional -->
+			</div>
+		</div>
+	</body>
+</html>

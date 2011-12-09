@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<title>Gradient</title>
+	<style>
+		#container {
+			width: 500px;
+			height: 500px;
+			margin: auto;			
+			background: #e3e3e3; /* Fallback. Ex: for IE */
+			
+			// Linear gradient: top-down; /* The // comment must have semicolon at the end; otherwise the subsequent code won't run well */
+			// background: -moz-linear-gradient(top, red, green); /* Gradient through 100% of the height */
+			// background: -moz-linear-gradient(top, red, green 10%); /* It will be green when it reaches 10% of the height */
+			// background: -moz-linear-gradient(top, red, green 20%, yellow); /* For Firefox. It will be green when it reaches 20% of the height, then it goes to yellow */			
+			// background: -webkit-gradient(linear, 0 0, 0 100%, from(red), color-stop(20%, green), to(yellow)); /* For Safari and Chrome. The coordinate is x,y. */
+			// background: -webkit-gradient(linear, center top, center bottom, from(red), color-stop(20%, green), to(yellow)); /* The same as the line before */
+			
+			/* Linear gradient: left-right */
+			// background: -moz-linear-gradient(left, red, green);
+			// background: -webkit-gradient(linear, left center, right center, from(red), to(green));
+			
+			/* Radial gradient - from center */
+			// background: -moz-radial-gradient(green, yellow);
+			// background: -webkit-gradient(radial, center center, 0, center center, 353.5, from(green), to(yellow));  /* radius^2 = halfwidth^2 + halfheight^2 */
+			
+			/* Radian gradient - not from center */
+			background: -moz-radial-gradient(40% 40%, green, yellow);
+			background: -webkit-gradient(radial, 40% 40%, 0, 40% 40%, 424.3, from(green), to(yellow));  /* radius^2 = 60%width^2 + 60%height^2 */			
+		}
+	</style>
+</head>
+<body>
+	<div id="container">		
+	</div>
+</body>
+</html>

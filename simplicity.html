@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<title>Simplicity</title>
+	<style>
+		body {
+			width: 500px;
+			margin: 60px auto 0;
+			background: #666;
+		}
+		#box {
+			width: 500px;
+			height: 500px;
+			
+			/* Create a rounded corner */
+			-moz-border-radius: 10px; /* For Firefox */
+			-webkit-border-radius: 10px; /* For Safari and Chrome */ 
+			border-radius: 10px; /* For other browser? */
+
+			/* Create a custom colored border */
+			border: 2px solid white;
+			-moz-border-top-colors: #292929 white; /* The number of colors here is the same as the number of pixels. In this case: 2px, so 2 colors */
+			-moz-border-right-colors: #292929 white;
+			-moz-border-bottom-colors: #292929 white;
+			-moz-border-left-colors: #292929 white;
+			
+			/* Webkit doesn't allow custom colored border, so here is an approximation, though not as good */
+			-webkit-box-shadow: 0 -1px 2px #292929;
+			
+			/* Create a background with gradient */ 
+			background: #e3e3e3; /* Fallback */
+			background: -moz-linear-gradient(top, #a4a4a4, #e3e3e3); /* For Firefox */
+			background: -webkit-gradient(linear, left top, left bottom, from(#a4a4a4), to(#e3e3e3));	
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+	</div>
+</body>
+</html>

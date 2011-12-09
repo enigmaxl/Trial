@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Keyframe</title>
+		<style>
+			#box1 {
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin: 50px 50px;
+				background: red;
+			}	
+			#box1:hover {
+				-moz-animation: anim1 2s; 			
+			}			
+			@-moz-keyframes anim1 {
+				from {background: red;}
+				to {background: green;}
+			}				
+			#box2 {
+				width: 100px;
+				height: 100px;
+				float:left;
+				margin: 50px 50px;
+				left: 100px;
+				top: 50px;
+				background: red;
+				/*-moz-animation: anim2 3s linear;*/
+			}
+			@-moz-keyframes anim2 {
+				from {margin-top: 50px;}
+				to {margin-top: 250px;}
+			}
+			#box3 {
+				width: 100px;
+				height: 100px;
+				float:left;
+				margin: 50px 50px;
+				background: red;
+				/*-moz-animation: anim3 5s;*/
+			}
+			@-moz-keyframes anim3 {
+				0% {margin-left: 50px; margin-top: 50px; background: red;}
+				25% {margin-left: 0px; margin-top: 100px; background: green; -moz-transform: rotate(45deg);}
+				50% {margin-left: 50px; margin-top: 150px; background: blue; -moz-transform: rotate(0deg);}
+				75% {margin-left: 100px; margin-top: 100px; background: orange; -moz-transform: rotate(-45deg);}
+				100% {margin-left: 50px; margin-top: 50px; background: red; }
+			}
+			#box4 {
+				width: 100px;
+				height: 100px;
+				float:left;
+				margin: 50px 50px;
+				background: blue;
+			}			
+			#box4:hover {
+			}
+			#bStart {
+				float:left;
+			}			
+			.boxanim {
+				-moz-animation: anim3 5s;
+			}
+
+			@-moz-keyframes animleft {
+				0% {height:100px;}
+				50% {height:200px;}
+				100% {height: 100px;}
+			}
+			@-moz-keyframes animright {
+				0% {width:100px;}
+				50% {width:200px;}
+				100% {width: 100px;}			
+			}
+			@-moz-keyframes animup {
+			}
+			@-moz-keyframes animdown {
+			}
+			
+			.moveleft {
+				-moz-animation: animleft 3s;
+			}
+			.moveright {
+				-moz-animation: animright 1s;
+			}
+			.moveup {
+				-moz-animation: animup 1s;
+			}
+			.movedown {
+				-moz-animation: animdown 1s;
+			}
+			
+		</style>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#bStart").click(function() {		
+					$("#box4").addClass("boxanim");					
+				});				
+				var element = $("#box4").bind("animationend", function(){				
+					$("#box4").removeClass("boxanim");					
+				});	
+
+				$("#bLeft").click(function() {
+					$("#box4").addClass("moveleft");					
+				});				
+				$("#bRight").click(function() {		
+					$("#box4").addClass("moveright");					
+				});				
+				$("#bUp").click(function() {		
+					$("#box4").addClass("moveup");					
+				});				
+				$("#bDown").click(function() {		
+					$("#box4").addClass("movedown");					
+				});				
+				
+				var element = $("#box4").bind("animationend", function(){				
+					$("#box4").removeClass("moveleft");					
+					$("#box4").removeClass("moveright");					
+					$("#box4").removeClass("moveup");
+					$("#box4").removeClass("movedown");										
+				});	
+					
+			});
+		</script>		
+	</head>
+	<body>
+		<input type="button" id="bStart" value="Start"/>			
+		
+		<input type="button" id="bLeft" value="Left"/>	
+		<input type="button" id="bRight" value="Right"/>	
+		<input type="button" id="bUp" value="Up"/>	
+		<input type="button" id="bDown" value="Down"/>	
+		<div id="box1">
+		</div>
+		<div id="box2">
+		</div>
+		<div id="box3">
+		</div>
+		<div id="box4">
+		</div>		
+	</body>
+</html>
